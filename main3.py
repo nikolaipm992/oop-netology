@@ -34,6 +34,11 @@ class Student:
             return NotImplemented
         return self.average_grade() < other.average_grade()
 
+    def __eq__(self, other):
+        if not isinstance(other, Student):
+            return NotImplemented
+        return self.average_grade() == other.average_grade()
+
 
 class Mentor:
     def __init__(self, name, surname):
@@ -63,6 +68,11 @@ class Lecturer(Mentor):
         if not isinstance(other, Lecturer):
             return NotImplemented
         return self.average_grade() < other.average_grade()
+
+    def __eq__(self, other):
+        if not isinstance(other, Lecturer):
+            return NotImplemented
+        return self.average_grade() == other.average_grade()
 
 
 class Reviewer(Mentor):
